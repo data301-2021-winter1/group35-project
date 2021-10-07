@@ -1,0 +1,390 @@
+{
+  "bytes": 98121,
+  "datahub": {
+    "created": "2017-11-09T01:28:53.365451",
+    "findability": "published",
+    "flowid": "core/corruption-perceptions-index/8",
+    "modified": "2018-03-15T06:14:33.293598",
+    "owner": "core",
+    "ownerid": "core"
+  },
+  "hash": "2918a076070040c66956f8a211ab241a",
+  "id": "core/corruption-perceptions-index",
+  "name": "corruption-perceptions-index",
+  "resources": [
+    {
+      "bytes": 15675,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/8850b48f9f116f2bfe21c1aae1aa05a4.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "data_original",
+      "path": "archive/data.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "Jurisdiction",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1998",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1999",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2000",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2001",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2002",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2003",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2004",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2005",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2006",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2007",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2008",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2009",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2010",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2011",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2012",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2013",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2014",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2015",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 567,
+      "datahub": {
+        "type": "derived/report"
+      },
+      "description": "Validation report for tabular data",
+      "dpp:streamedFrom": "/tmp/tmp89_t9j9y/core/corruption-perceptions-index/validation_report/data/96b6cc48e9b566f4858848ddfd31fe66/validation_report.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "96b6cc48e9b566f4858848ddfd31fe66",
+      "name": "validation_report",
+      "path": "data/validation_report.json",
+      "profile": "data-resource"
+    },
+    {
+      "bytes": 15410,
+      "datahub": {
+        "derivedFrom": [
+          "data"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp89_t9j9y/core/corruption-perceptions-index/data_csv/data/e071f294ae29438b3837b14c340b65e6/data_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "e071f294ae29438b3837b14c340b65e6",
+      "name": "data_csv",
+      "path": "data/data_csv.csv",
+      "profile": "data-resource",
+      "rowcount": 227,
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "Jurisdiction",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1998",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1999",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2000",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2001",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2002",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2003",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2004",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2005",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2006",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2007",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2008",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2009",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2010",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2011",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2012",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2013",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2014",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2015",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 64582,
+      "datahub": {
+        "derivedFrom": [
+          "data"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp89_t9j9y/core/corruption-perceptions-index/data_json/data/7a0ace25f504256ff165a609056a408f/data_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "7a0ace25f504256ff165a609056a408f",
+      "name": "data_json",
+      "path": "data/data_json.json",
+      "profile": "data-resource",
+      "rowcount": 227,
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "Jurisdiction",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1998",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "1999",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2000",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2001",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2002",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2003",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2004",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2005",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2006",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2007",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2008",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2009",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2010",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2011",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2012",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2013",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2014",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "2015",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 1887,
+      "dpp:streamedFrom": "/tmp/tmpmely4we_/README.md",
+      "format": "md",
+      "name": "readme",
+      "path": "README.md"
+    }
+  ],
+  "title": "Corruption Perceptions Index"
+}
