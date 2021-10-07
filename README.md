@@ -32,5 +32,5 @@ The data is a combination of data from the World Inequality Database and Transpa
 {Add your stuff here}
 
 
-https://wid.world/
+https://wid.world/ /n
 https://www.transparency.org/en/cpi/2020/index/nzl 
