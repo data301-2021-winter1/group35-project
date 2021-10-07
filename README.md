@@ -9,11 +9,13 @@ Details for Milestone are available on Canvas (left sidebar, Course Project) or 
 
 ## Describe your topic/interest in about 150-200 words
 
-{Add your stuff here}
+Looking at the correlation between a variety of inequality indicators and perceptions of corruption, measured by the Corruption Perception Index (CPI). This will be focused on the top 25 most developed countries in Africa. The country set was chosen because they are both geographically linked and are likely to have a large amount of data collected on them while still having some instability and likelihood for corruption. Theoretically, higher rates of inequality will predict higher perceptions of corruption in a country. However, it is not clear which index of inequality is a better indicator of inequality, or if any have a high correlation. Since we are analyzing so many countries, we can also address whether a subgroup, defined by some other characteristic, shows this correlation between inequality and CPI better than others. Hopefully, the analysis shows a stronger between one measure of ineqaulity and CPI which is consistant along all the countries we are studying.
 
 ## Describe your dataset in about 150-200 words
 
-{Add your stuff here}
+The data is a combination of data from the World Inequality Database and Transparency International. The Word Inquality Database (WID) is an open database with the aims of providing the most extensive dataset on Iniquality. WID will provide eleven variables 
+
+Transparancy International measures the Curruption Perceptions Index index.
 
 ## Team Members
 
