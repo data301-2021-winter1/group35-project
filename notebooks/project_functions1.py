@@ -63,7 +63,7 @@ def load_and_process():
     CPI_CC['CC'] = Af_CC['alpha2']
     
     ## Reformatting CPI Data
-        Comb = pd.DataFrame(columns = All_Y.columns)
+    Comb = pd.DataFrame(columns = All_Y.columns)
     years = ['Jurisdiction', '1998', '1999', '2000', '2001', '2002', '2003', '2004',
             '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013',
             '2014', '2015', 'CC']
@@ -83,8 +83,15 @@ def load_and_process():
     Comb['value'] = [x * 10 if type(x) == float and x < 10 else x for x in Comb['value']]
             
     ## Completly Cleaned Data   
-        CIdata = All_Y.append(Comb)
+    CIdata = All_Y.append(Comb)
     
     ## Completly Cleaned Data   
-        CIdata = All_Y.append(Comb)
-        return CIdata
+    CIdata = All_Y.append(Comb)
+    return CIdata
+
+def scatter_plot1(CC = 'MU', CID = load_and_process()):
+    CC_D = CID.loc[CID['country'] == CC]
+    plt.title(f"Country : {CC}")
+    plt.xlabel(f"Top 1% Share Nat. Income")
+    plt.ylabel(f"CPI Index")
+    plt.plot(CC_D.loc[CC_D['percentile'] == 'p99p100']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'o', color = 'green')
