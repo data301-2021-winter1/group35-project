@@ -1,7 +1,15 @@
 import pandas as pd
 import datapackage
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 
 def load_and_process():
+    import pandas as pd
+    import datapackage
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import numpy as np
     ## Getting all country codes
     WID_CC = (pd.read_csv('../data/raw/WID_countries.csv', sep = ";"))
     
@@ -90,8 +98,52 @@ def load_and_process():
     return CIdata
 
 def scatter_plot1(CC = 'MU', CID = load_and_process()):
+    import pandas as pd
+    import datapackage
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import numpy as np
     CC_D = CID.loc[CID['country'] == CC]
     plt.title(f"Country : {CC}")
     plt.xlabel(f"Top 1% Share Nat. Income")
     plt.ylabel(f"CPI Index")
     plt.plot(CC_D.loc[CC_D['percentile'] == 'p99p100']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'o', color = 'green')
+
+def sp50(CC = 'MU', CID = load_and_process()):
+    import pandas as pd
+    import datapackage
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import numpy as np
+    CC_D = CID.loc[CID['country'] == CC]
+    plt.title(f"Country : {CC}")
+    plt.xlabel(f"Bottom 50% Share Nat. Income")
+    plt.ylabel(f"CPI Index")
+    plt.plot(CC_D.loc[CC_D['percentile'] == 'p0p50']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'o', color = 'red')
+
+def cpi_timeseries(CC= 'UG', CID = load_and_process()):
+    import pandas as pd
+    import datapackage
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import numpy as np
+    CPI = CID.loc[CID['variable'] == 'CPI']
+    CPI_UG = CPI.loc[CPI['country'] == CC]
+    CPI_UG = CPI_UG.loc[CPI_UG['value'] != '-']
+    plt.rcParams["figure.figsize"] = [10, 4]
+    CPI_time = sns.barplot(x="year", y="value", data=CPI_UG)
+    CPI_time.set_xlabel("Year")
+    CPI_time.set_ylabel("CPI")
+    CPI_time.set_title(f"CPI index over time in {CC}")
+
+def cpi_year(year = 2015, CID = load_and_process()):
+    import pandas as pd
+    import datapackage
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import numpy as np
+    CPI = CID.loc[CID['variable'] == 'CPI']
+    CC_year = CPI.loc[CPI['year'] == year]
+    CC_year = CC_year.loc[CC_year['value'] != '-']
+    CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year)
+    CC_yearPlot.set_title(f"CPI values in {year}")
