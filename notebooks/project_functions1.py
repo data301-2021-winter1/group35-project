@@ -81,20 +81,18 @@ def load_and_process():
             'country' : [CPI_CC['CC'][con]],
             'variable' : ['CPI'],
             'percentile' : ['NA'],
-            'year' : [(1997+c)],
+            'year' : [int(1997+c)],
             'age' : ['NA'],
             'value' : [CPI_CC[years[c]][con]],
             'pop' : ['NA']
             })
-            Comb = Comb.append(temp)
+            Comb = pd.concat([Comb, temp], ignore_index=True)
     Comb['value'] = [float(x) if x != '-' else x for x in Comb['value']]
     Comb['value'] = [x * 10 if type(x) == float and x < 10 else x for x in Comb['value']]
             
     ## Completly Cleaned Data   
-    CIdata = All_Y.append(Comb)
+    CIdata = pd.concat([All_Y, Comb], ignore_index=True)
     
-    ## Completly Cleaned Data   
-    CIdata = All_Y.append(Comb)
     return CIdata
 
 def scatter_plot1(CC = 'MU', CID = load_and_process()):
@@ -104,6 +102,7 @@ def scatter_plot1(CC = 'MU', CID = load_and_process()):
     import matplotlib.pyplot as plt
     import numpy as np
     CC_D = CID.loc[CID['country'] == CC]
+    CC_D = CC_D[CC_D.value != '-']
     plt.title(f"Country : {CC}")
     plt.xlabel(f"Top 1% Share Nat. Income")
     plt.ylabel(f"CPI Index")
@@ -116,6 +115,7 @@ def sp50(CC = 'MU', CID = load_and_process()):
     import matplotlib.pyplot as plt
     import numpy as np
     CC_D = CID.loc[CID['country'] == CC]
+    CC_D = CC_D[CC_D.value != '-']
     plt.title(f"Country : {CC}")
     plt.xlabel(f"Bottom 50% Share Nat. Income")
     plt.ylabel(f"CPI Index")
@@ -145,5 +145,6 @@ def cpi_year(year = 2015, CID = load_and_process()):
     CPI = CID.loc[CID['variable'] == 'CPI']
     CC_year = CPI.loc[CPI['year'] == year]
     CC_year = CC_year.loc[CC_year['value'] != '-']
-    CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year)
+    CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year, color = 'violet', orient = 'v')
+    CC_yearPlot.color_palette("husl", 8)
     CC_yearPlot.set_title(f"CPI values in {year}")
