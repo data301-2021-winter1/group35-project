@@ -131,7 +131,9 @@ def cpi_timeseries(CC= 'UG', CID = load_and_process()):
     CPI_UG = CPI.loc[CPI['country'] == CC]
     CPI_UG = CPI_UG.loc[CPI_UG['value'] != '-']
     plt.rcParams["figure.figsize"] = [10, 4]
-    CPI_time = sns.barplot(x="year", y="value", data=CPI_UG).set_xlabel("Year").set_ylabel("CPI").set_title(f"CPI index over time in {CC}")
+    CPI_time = sns.barplot(x="year", y="value", data=CPI_UG)
+    CPI_time.set_xlabel("Year").set_ylabel("CPI")
+    CPI_time.set_title(f"CPI index over time in {CC}")
 
 def cpi_year(year = 2015, CID = load_and_process()):
     import pandas as pd
@@ -142,7 +144,9 @@ def cpi_year(year = 2015, CID = load_and_process()):
     CPI = CID.loc[CID['variable'] == 'CPI']
     CC_year = CPI.loc[CPI['year'] == year]
     CC_year = CC_year.loc[CC_year['value'] != '-']
-    CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year, color = 'violet', orient = 'v').set_ylabel("CPI").set_title(f"CPI values in {year}")
+    CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year, color = 'violet', orient = 'v')
+    CC_yearPlot.set_ylabel("CPI")
+    CC_yearPlot.set_title(f"CPI values in {year}")
 
 def NatIncome(y = 2015, CID = load_and_process()):
     CIDY = CID[CID.year == y]
