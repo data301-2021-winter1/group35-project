@@ -146,5 +146,4 @@ def cpi_year(year = 2015, CID = load_and_process()):
     CC_year = CPI.loc[CPI['year'] == year]
     CC_year = CC_year.loc[CC_year['value'] != '-']
     CC_yearPlot = sns.barplot(x = 'country', y = 'value', data = CC_year, color = 'violet', orient = 'v')
-    CC_yearPlot.color_palette("husl", 8)
     CC_yearPlot.set_title(f"CPI values in {year}")
