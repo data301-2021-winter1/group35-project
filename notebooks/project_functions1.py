@@ -106,7 +106,7 @@ def scatter_plot1(CC = 'MU', CID = load_and_process()):
     plt.title(f"Country : {CC}")
     plt.xlabel(f"Top 1% Share Nat. Income")
     plt.ylabel(f"CPI Index")
-    plt.plot(CC_D.loc[CC_D['percentile'] == 'p99p100']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'o', color = 'green')
+    plt.plot(CC_D.loc[CC_D['percentile'] == 'p99p100']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], '2', color = 'green')
 
 def sp50(CC = 'MU', CID = load_and_process()):
     import pandas as pd
@@ -119,7 +119,7 @@ def sp50(CC = 'MU', CID = load_and_process()):
     plt.title(f"Country : {CC}")
     plt.xlabel(f"Bottom 50% Share Nat. Income")
     plt.ylabel(f"CPI Index")
-    plt.plot(CC_D.loc[CC_D['percentile'] == 'p0p50']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'o', color = 'red')
+    plt.plot(CC_D.loc[CC_D['percentile'] == 'p0p50']['value'], CC_D.loc[CC_D['variable'] == 'CPI']['value'], 'h', color = 'red')
 
 def cpi_timeseries(CC= 'UG', CID = load_and_process()):
     import pandas as pd
@@ -132,7 +132,8 @@ def cpi_timeseries(CC= 'UG', CID = load_and_process()):
     CPI_UG = CPI_UG.loc[CPI_UG['value'] != '-']
     plt.rcParams["figure.figsize"] = [10, 4]
     CPI_time = sns.barplot(x="year", y="value", data=CPI_UG)
-    CPI_time.set_xlabel("Year").set_ylabel("CPI")
+    CPI_time.set_xlabel("Year")
+    CPI_time.set_ylabel("CPI")
     CPI_time.set_title(f"CPI index over time in {CC}")
 
 def cpi_year(year = 2015, CID = load_and_process()):
@@ -157,4 +158,25 @@ def NatIncome(y = 2015, CID = load_and_process()):
     plt.title(f"National Country v CPI in {y}")
     plt.xlabel(f"National Income")
     plt.ylabel(f"CPI")
-    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], 'o', color = 'peru')
+    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], 'D', color = 'peru')
+
+def Pop(y = 2015, CID = load_and_process()):
+    CIDY = CID[CID.year == y]
+    NI = CIDY[CIDY.variable == 'npopul999i'].drop_duplicates()
+    CPI = CIDY.loc[CIDY['variable'] == 'CPI'].reset_index(drop=True).drop_duplicates()
+    CPI = CPI[CPI.value != '-']
+    NI_CPI = pd.merge(NI, CPI, how = 'inner', on='country')
+    plt.title(f"Population v CPI in {y}")
+    plt.xlabel(f"Population")
+    plt.ylabel(f"CPI")
+    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], 'o', color = 'slateblue')
+
+def AllNatIncome(CID = load_and_process()):
+    NI = CID[CID.variable == 'anninc992i'].drop_duplicates()
+    CPI = CID.loc[CID['variable'] == 'CPI'].reset_index(drop=True).drop_duplicates()
+    CPI = CPI[CPI.value != '-']
+    NI_CPI = pd.merge(NI, CPI, how = 'inner', on='country')
+    plt.title(f"National Country v CPI (1998-2015)")
+    plt.xlabel(f"National Income")
+    plt.ylabel(f"CPI")
+    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], '*', color = 'seagreen', hue = "year")
