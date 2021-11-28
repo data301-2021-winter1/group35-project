@@ -179,4 +179,4 @@ def AllNatIncome(CID = load_and_process()):
     plt.title(f"National Country v CPI (1998-2015)")
     plt.xlabel(f"National Income")
     plt.ylabel(f"CPI")
-    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], '*', color = 'seagreen', hue = "year")
+    plt.plot(NI_CPI['value_x'], NI_CPI['value_y'], '*', color = 'seagreen')
